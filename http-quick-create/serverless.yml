@@ -1,0 +1,13 @@
+service: http-api-service
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  helloWorld:
+    handler: hello.get
+    events:
+      - httpApi:
+          method: GET
+          path: /hello
